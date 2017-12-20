@@ -3,10 +3,14 @@ apply plugin: 'com.jfrog.bintray'
 
 version '1.0.0'
 
+artifacts {
+    archives androidSourcesJar
+}
+
 publishing {
     publications {
         Production(MavenPublication) {
-            println "$buildDir"
+            artifact androidSourcesJar
             artifact("$buildDir/outputs/aar/lib-release.aar")
             groupId 'com.walmartlabs.ern'
             artifactId 'android-showcaseapp-ern-container'
