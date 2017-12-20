@@ -53,6 +53,8 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:27.0.2'
-    compile 'com.walmartlabs.ern:react-native:0.51.0'
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'com.walmartlabs.ern:react-native:0.51.0'
 }
+
+apply from: 'publish.gradle'
