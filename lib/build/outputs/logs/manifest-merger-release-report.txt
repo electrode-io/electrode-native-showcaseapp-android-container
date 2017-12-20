@@ -1,0 +1,69 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:1:1-17:12
+INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:1:1-17:12
+INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:1:1-17:12
+INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:1:1-17:12
+INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:1:1-17:12
+INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:1:1-17:12
+INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:1:1-17:12
+	package
+		ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:2:5-44
+		INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml
+		INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml
+		ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:1:1-17:12
+		INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml
+		ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:1:1-17:12
+		INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:3:4-66
+	android:name
+		ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:3:21-63
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:4:4-76
+	android:name
+		ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:4:21-74
+application
+ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:5:5-16:19
+activity#com.walmartlabs.ern.container.miniapps.ColorpickerminiappActivity
+ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:6:8-8:19
+	android:exported
+		ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:7:18-41
+	android:name
+		ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:6:18-98
+activity#com.walmartlabs.ern.container.miniapps.MovieListMiniAppActivity
+ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:9:8-11:19
+	android:exported
+		ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:10:18-41
+	android:name
+		ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:9:18-96
+activity#com.walmartlabs.ern.container.miniapps.MovieDetailsMiniAppActivity
+ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:12:8-14:19
+	android:exported
+		ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:13:18-41
+	android:name
+		ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:12:18-99
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:15:8-85
+	android:name
+		ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml:15:18-82
+uses-sdk
+INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml
+INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml
+INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml
+INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml
+		ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml
+		INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml
+		ADDED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml
+		INJECTED from /Users/d0g00g4/.ern/containergen/out/android/lib/src/main/AndroidManifest.xml
