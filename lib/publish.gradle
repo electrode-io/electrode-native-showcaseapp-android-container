@@ -46,7 +46,7 @@ bintray {
         description = "Container that holds the MiniApps and APIs for the ElectrodeNativeShowcaseApp for android."
         publish = true
         licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/deepueg/electrode-native-showcaseapp-android-container.git'
+        vcsUrl = 'https://github.com/electrode-io/electrode-native-showcaseapp-android-container.git'
         dryRun = false
         publicDownloadNumbers = true
         version {
