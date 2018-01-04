@@ -38,6 +38,7 @@ import com.facebook.react.ReactInstanceManagerBuilder;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.shell.MainReactPackage;
+import com.walmartlabs.ern.container.plugins.CodePushPlugin;
 import com.walmartlabs.ern.container.plugins.BridgePlugin;
 
 public class ElectrodeReactContainer {
@@ -55,7 +56,8 @@ public class ElectrodeReactContainer {
 
     private ElectrodeReactContainer(Application application,
                                     Config reactContainerConfig
-                             ) {
+                                ,CodePushPlugin.Config codePushPluginConfig
+                                                         ) {
         // ReactNative general config
         this.isReactNativeDeveloperSupport = reactContainerConfig.isReactNativeDeveloperSupport;
 
@@ -83,6 +85,7 @@ public class ElectrodeReactContainer {
                 .setUseDeveloperSupport(reactContainerConfig.isReactNativeDeveloperSupport)
                 .setInitialLifecycleState(LifecycleState.BEFORE_CREATE);
 
+        sReactPackages.add(new CodePushPlugin().hook(application, reactInstanceManagerBuilder, codePushPluginConfig));
         sReactPackages.add(new BridgePlugin().hook(application, reactInstanceManagerBuilder));
     }
 
@@ -139,12 +142,14 @@ public class ElectrodeReactContainer {
     public synchronized static ElectrodeReactContainer initialize(
             @NonNull Application application,
             @NonNull final Config reactContainerConfig
+            ,@NonNull final CodePushPlugin.Config codePushPluginConfig
 ) {
         if (null == sInstance) {
             sInstance = new ElectrodeReactContainer(
                     application,
                     reactContainerConfig
-             );
+                ,codePushPluginConfig
+                         );
 
             // Load bundle now (engine might offer lazy loading later down the road)
             getReactInstanceManager().createReactContextInBackground();

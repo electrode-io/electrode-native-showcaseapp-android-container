@@ -21,7 +21,7 @@ gradle.projectsEvaluated {
 uploadArchives {
     repositories {
         mavenDeployer {
-            pom.version = '1.0.0'
+            pom.version = '1.0.1'
             pom.artifactId = 'ElectrodeNativeShowcase-ern-container'
             pom.groupId = 'com.walmartlabs.ern'
             repository(url: "file:///Users/d0g00g4/.m2/repository")
@@ -53,8 +53,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:27.0.2'
-    implementation 'com.walmartlabs.ern:react-native:0.51.0'
+    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.walmartlabs.ern:react-native:0.51.0'
+    compile 'com.nimbusds:nimbus-jose-jwt:5.1'
 }
-
-apply from: 'publish.gradle'
