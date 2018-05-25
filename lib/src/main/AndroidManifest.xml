@@ -12,6 +12,9 @@
        <activity android:name="com.walmartlabs.ern.container.miniapps.MovieDetailsMiniAppActivity"		
                  android:exported="true">
        </activity>		
+       <activity android:name="com.walmartlabs.ern.container.miniapps.NavDemoMiniAppActivity"		
+                 android:exported="true">
+       </activity>		
        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
     </application>
 </manifest>

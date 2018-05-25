@@ -28,6 +28,7 @@ public class MiniAppsConfig {
         colorpickerminiapp("colorpickerminiapp", ColorpickerminiappActivity.class),
         MovieListMiniApp("MovieListMiniApp", MovieListMiniAppActivity.class),
         MovieDetailsMiniApp("MovieDetailsMiniApp", MovieDetailsMiniAppActivity.class),
+        NavDemoMiniApp("NavDemoMiniApp", NavDemoMiniAppActivity.class),
         ;
 
         private final String miniAppName;
@@ -53,5 +54,6 @@ public class MiniAppsConfig {
         put(MiniApps.colorpickerminiapp.getName(), MiniApps.colorpickerminiapp.getActivityClass());
         put(MiniApps.MovieListMiniApp.getName(), MiniApps.MovieListMiniApp.getActivityClass());
         put(MiniApps.MovieDetailsMiniApp.getName(), MiniApps.MovieDetailsMiniApp.getActivityClass());
+        put(MiniApps.NavDemoMiniApp.getName(), MiniApps.NavDemoMiniApp.getActivityClass());
     }};
 }
