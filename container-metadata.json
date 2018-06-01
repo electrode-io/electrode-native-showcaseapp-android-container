@@ -4,7 +4,7 @@
     "colorpickerminiapp@0.0.6",
     "movielistminiapp@0.0.14",
     "moviedetailsminiapp@0.0.12",
-    "nav-demo-miniapp@0.0.8"
+    "nav-demo-miniapp@0.0.9"
   ],
   "nativeDeps": [
     "ern-color-picker-api@0.0.1",
