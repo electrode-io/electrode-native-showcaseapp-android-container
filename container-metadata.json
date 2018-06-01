@@ -1,0 +1,18 @@
+{
+  "jsApiImpls": [],
+  "miniApps": [
+    "colorpickerminiapp@0.0.6",
+    "movielistminiapp@0.0.14",
+    "moviedetailsminiapp@0.0.12",
+    "nav-demo-miniapp@0.0.8"
+  ],
+  "nativeDeps": [
+    "ern-color-picker-api@0.0.1",
+    "ern-showcase-navigation-api@0.0.2",
+    "react-native@0.54.0",
+    "react-native-code-push@5.3.0",
+    "react-native-electrode-bridge@1.5.10",
+    "react-native-ernmovie-api@0.0.9",
+    "react-native-ernnavigation-api@0.0.4"
+  ]
+}
