@@ -27,15 +27,13 @@ import static com.walmartlabs.electrode.reactnative.bridge.util.BridgeArguments.
 public class NavBar implements Parcelable, Bridgeable {
 
     private String title;
-    private NavBarButton leftButton;
-    private List<NavBarButton> rightButtons;
+    private List<NavBarButton> buttons;
 
     private NavBar() {}
 
     private NavBar(Builder builder) {
         this.title = builder.title;
-        this.leftButton = builder.leftButton;
-        this.rightButtons = builder.rightButtons;
+        this.buttons = builder.buttons;
     }
 
     private NavBar(Parcel in) {
@@ -48,8 +46,7 @@ public class NavBar implements Parcelable, Bridgeable {
         }
 
         this.title = bundle.getString("title");
-        this.leftButton = bundle.containsKey("leftButton") ? new NavBarButton(bundle.getBundle("leftButton")) : null;
-        this.rightButtons = bundle.containsKey("rightButtons") ? getList(bundle.getParcelableArray("rightButtons"), NavBarButton.class) : null;
+        this.buttons = bundle.containsKey("buttons") ? getList(bundle.getParcelableArray("buttons"), NavBarButton.class) : null;
     }
 
     public static final Creator<NavBar> CREATOR = new Creator<NavBar>() {
@@ -74,19 +71,14 @@ public class NavBar implements Parcelable, Bridgeable {
         return title;
     }
 
-    @Nullable
-    public NavBarButton getLeftButton() {
-        return leftButton;
-    }
-
     /**
     * Right button properties
     *
     * @return List<NavBarButton>
     */
     @Nullable
-    public List<NavBarButton> getRightButtons() {
-        return rightButtons;
+    public List<NavBarButton> getButtons() {
+        return buttons;
     }
 
 
@@ -105,11 +97,8 @@ public class NavBar implements Parcelable, Bridgeable {
     public Bundle toBundle() {
         Bundle bundle = new Bundle();
         bundle.putString("title", this.title);
-        if(this.leftButton != null) {
-            bundle.putBundle("leftButton", this.leftButton.toBundle());
-        }
-        if(this.rightButtons != null) {
-            updateBundleWithList(this.rightButtons, bundle, "rightButtons");
+        if(this.buttons != null) {
+            updateBundleWithList(this.buttons, bundle, "buttons");
         }
         return bundle;
     }
@@ -118,28 +107,21 @@ public class NavBar implements Parcelable, Bridgeable {
     public String toString() {
         return "{"
         + "title:" + (title != null ? "\"" + title + "\"" : null)+ ","
-        + "leftButton:" + (leftButton != null ? leftButton.toString() : null)+ ","
-        + "rightButtons:" + (rightButtons != null ? rightButtons.toString() : null)
+        + "buttons:" + (buttons != null ? buttons.toString() : null)
         + "}";
     }
 
     public static class Builder {
         private final String title;
-        private NavBarButton leftButton;
-        private List<NavBarButton> rightButtons;
+        private List<NavBarButton> buttons;
 
         public Builder(@NonNull String title) {
             this.title = title;
         }
 
         @NonNull
-        public Builder leftButton(@Nullable NavBarButton leftButton) {
-            this.leftButton = leftButton;
-            return this;
-        }
-        @NonNull
-        public Builder rightButtons(@Nullable List<NavBarButton> rightButtons) {
-            this.rightButtons = rightButtons;
+        public Builder buttons(@Nullable List<NavBarButton> buttons) {
+            this.buttons = buttons;
             return this;
         }
 

@@ -27,21 +27,15 @@ import static com.walmartlabs.electrode.reactnative.bridge.util.BridgeArguments.
 public class ErnRoute implements Parcelable, Bridgeable {
 
     private String path;
-    private String arguments;
-    private String payload;
+    private String jsonPayload;
     private NavBar navBar;
-    private Boolean animated;
-    private PopType popType;
 
     private ErnRoute() {}
 
     private ErnRoute(Builder builder) {
         this.path = builder.path;
-        this.arguments = builder.arguments;
-        this.payload = builder.payload;
+        this.jsonPayload = builder.jsonPayload;
         this.navBar = builder.navBar;
-        this.animated = builder.animated;
-        this.popType = builder.popType;
     }
 
     private ErnRoute(Parcel in) {
@@ -54,11 +48,8 @@ public class ErnRoute implements Parcelable, Bridgeable {
         }
 
         this.path = bundle.getString("path");
-        this.arguments = bundle.getString("arguments");
-        this.payload = bundle.getString("payload");
+        this.jsonPayload = bundle.getString("jsonPayload");
         this.navBar = bundle.containsKey("navBar") ? new NavBar(bundle.getBundle("navBar")) : null;
-        this.animated = bundle.containsKey("animated") ? bundle.getBoolean("animated") : null;
-        this.popType = bundle.containsKey("popType") ? new PopType(bundle.getBundle("popType")) : null;
     }
 
     public static final Creator<ErnRoute> CREATOR = new Creator<ErnRoute>() {
@@ -74,7 +65,7 @@ public class ErnRoute implements Parcelable, Bridgeable {
     };
 
     /**
-    * Path of the Route
+    * Path of the Route. Mostly the name of the container(defined by the native app) or the miniapp name. The content of the path is mainly determined by the native implemenation of the API
     *
     * @return String
     */
@@ -84,43 +75,18 @@ public class ErnRoute implements Parcelable, Bridgeable {
     }
 
     /**
-    * Arguments for the path
+    * Optional Payload (respresented as JSON String) needed by the screen you are trying to navigate to.
     *
     * @return String
     */
     @Nullable
-    public String getArguments() {
-        return arguments;
-    }
-
-    /**
-    * Payload for the screen
-    *
-    * @return String
-    */
-    @Nullable
-    public String getPayload() {
-        return payload;
+    public String getJsonPayload() {
+        return jsonPayload;
     }
 
     @Nullable
     public NavBar getNavBar() {
         return navBar;
-    }
-
-    /**
-    * describe if the screen want to be animated
-    *
-    * @return Boolean
-    */
-    @Nullable
-    public Boolean getAnimated() {
-        return animated;
-    }
-
-    @Nullable
-    public PopType getPopType() {
-        return popType;
     }
 
 
@@ -139,20 +105,11 @@ public class ErnRoute implements Parcelable, Bridgeable {
     public Bundle toBundle() {
         Bundle bundle = new Bundle();
         bundle.putString("path", this.path);
-        if(arguments != null) {
-            bundle.putString("arguments", this.arguments );
-        }
-        if(payload != null) {
-            bundle.putString("payload", this.payload );
+        if(jsonPayload != null) {
+            bundle.putString("jsonPayload", this.jsonPayload );
         }
         if(this.navBar != null) {
             bundle.putBundle("navBar", this.navBar.toBundle());
-        }
-        if(this.animated != null) {
-            bundle.putBoolean("animated", this.animated);
-        }
-        if(this.popType != null) {
-            bundle.putBundle("popType", this.popType.toBundle());
         }
         return bundle;
     }
@@ -161,49 +118,28 @@ public class ErnRoute implements Parcelable, Bridgeable {
     public String toString() {
         return "{"
         + "path:" + (path != null ? "\"" + path + "\"" : null)+ ","
-        + "arguments:" + (arguments != null ? "\"" + arguments + "\"" : null)+ ","
-        + "payload:" + (payload != null ? "\"" + payload + "\"" : null)+ ","
-        + "navBar:" + (navBar != null ? navBar.toString() : null)+ ","
-        + "animated:" + animated+ ","
-        + "popType:" + (popType != null ? popType.toString() : null)
+        + "jsonPayload:" + (jsonPayload != null ? "\"" + jsonPayload + "\"" : null)+ ","
+        + "navBar:" + (navBar != null ? navBar.toString() : null)
         + "}";
     }
 
     public static class Builder {
         private final String path;
-        private String arguments;
-        private String payload;
+        private String jsonPayload;
         private NavBar navBar;
-        private Boolean animated;
-        private PopType popType;
 
         public Builder(@NonNull String path) {
             this.path = path;
         }
 
         @NonNull
-        public Builder arguments(@Nullable String arguments) {
-            this.arguments = arguments;
-            return this;
-        }
-        @NonNull
-        public Builder payload(@Nullable String payload) {
-            this.payload = payload;
+        public Builder jsonPayload(@Nullable String jsonPayload) {
+            this.jsonPayload = jsonPayload;
             return this;
         }
         @NonNull
         public Builder navBar(@Nullable NavBar navBar) {
             this.navBar = navBar;
-            return this;
-        }
-        @NonNull
-        public Builder animated(@Nullable Boolean animated) {
-            this.animated = animated;
-            return this;
-        }
-        @NonNull
-        public Builder popType(@Nullable PopType popType) {
-            this.popType = popType;
             return this;
         }
 

@@ -28,14 +28,14 @@ public class NavBarButton implements Parcelable, Bridgeable {
 
     private String name;
     private String identifier;
-    private Boolean showIcon;
+    private String orientation;
 
     private NavBarButton() {}
 
     private NavBarButton(Builder builder) {
         this.name = builder.name;
         this.identifier = builder.identifier;
-        this.showIcon = builder.showIcon;
+        this.orientation = builder.orientation;
     }
 
     private NavBarButton(Parcel in) {
@@ -51,9 +51,13 @@ public class NavBarButton implements Parcelable, Bridgeable {
             throw new IllegalArgumentException("identifier property is required");
         }
 
+        if(!bundle.containsKey("orientation")){
+            throw new IllegalArgumentException("orientation property is required");
+        }
+
         this.name = bundle.getString("name");
         this.identifier = bundle.getString("identifier");
-        this.showIcon = bundle.containsKey("showIcon") ? bundle.getBoolean("showIcon") : null;
+        this.orientation = bundle.getString("orientation");
     }
 
     public static final Creator<NavBarButton> CREATOR = new Creator<NavBarButton>() {
@@ -89,13 +93,13 @@ public class NavBarButton implements Parcelable, Bridgeable {
     }
 
     /**
-    * Set to true for showing icon
+    * Orientation LEFT|RIGHT|CENTER etc.
     *
-    * @return Boolean
+    * @return String
     */
-    @Nullable
-    public Boolean getShowIcon() {
-        return showIcon;
+    @NonNull
+    public String getOrientation() {
+        return orientation;
     }
 
 
@@ -115,9 +119,7 @@ public class NavBarButton implements Parcelable, Bridgeable {
         Bundle bundle = new Bundle();
         bundle.putString("name", this.name);
         bundle.putString("identifier", this.identifier);
-        if(this.showIcon != null) {
-            bundle.putBoolean("showIcon", this.showIcon);
-        }
+        bundle.putString("orientation", this.orientation);
         return bundle;
     }
 
@@ -126,25 +128,21 @@ public class NavBarButton implements Parcelable, Bridgeable {
         return "{"
         + "name:" + (name != null ? "\"" + name + "\"" : null)+ ","
         + "identifier:" + (identifier != null ? "\"" + identifier + "\"" : null)+ ","
-        + "showIcon:" + showIcon
+        + "orientation:" + (orientation != null ? "\"" + orientation + "\"" : null)
         + "}";
     }
 
     public static class Builder {
         private final String name;
         private final String identifier;
-        private Boolean showIcon;
+        private final String orientation;
 
-        public Builder(@NonNull String name, @NonNull String identifier) {
+        public Builder(@NonNull String name, @NonNull String identifier, @NonNull String orientation) {
             this.name = name;
             this.identifier = identifier;
+            this.orientation = orientation;
         }
 
-        @NonNull
-        public Builder showIcon(@Nullable Boolean showIcon) {
-            this.showIcon = showIcon;
-            return this;
-        }
 
         @NonNull
         public NavBarButton build() {

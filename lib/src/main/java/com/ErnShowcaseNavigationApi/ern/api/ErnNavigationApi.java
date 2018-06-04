@@ -27,11 +27,9 @@ import com.ErnShowcaseNavigationApi.ern.model.ErnRoute;
 
 public final class ErnNavigationApi {
     private static final Requests REQUESTS;
-    private static final Events EVENTS;
 
     static {
         REQUESTS = new ErnNavigationRequests();
-        EVENTS = new ErnNavigationEvents();
     }
 
     private ErnNavigationApi() {
@@ -42,21 +40,7 @@ public final class ErnNavigationApi {
         return REQUESTS;
     }
 
-    @NonNull
-    public static Events events() {
-        return EVENTS;
-    }
 
-    public interface Events {
-        String EVENT_ON_NAVIGATE = "com.ErnShowcaseNavigationApi.ern.api.event.onNavigate";
-
-        UUID addOnNavigateEventListener(@NonNull final ElectrodeBridgeEventListener<ErnRoute> eventListener);
-
-            ElectrodeBridgeEventListener<ElectrodeBridgeEvent> removeOnNavigateEventListener(@NonNull final UUID uuid);
-
-        void emitOnNavigate(@NonNull ErnRoute ernRoute);
-
-    }
 
     public interface Requests {
         String REQUEST_NAVIGATE = "com.ErnShowcaseNavigationApi.ern.api.request.navigate";
